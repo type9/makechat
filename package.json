@@ -1,0 +1,19 @@
+{
+  "name": "makechat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/type9/makechat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/type9/makechat/issues"
+  },
+  "homepage": "https://github.com/type9/makechat#readme"
+}
