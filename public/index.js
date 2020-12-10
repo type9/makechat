@@ -41,6 +41,16 @@ $(document).ready(()=>{
         $('#chat-input').val("");
       }
     });
+
+    $('#new-channel-btn').click( () => {
+        let newChannel = $('#new-channel-input').val();
+        
+        if(newChannel.length > 0){
+            // Emit the new channel to the server
+            socket.emit('new channel', newChannel);
+            $('#new-channel-input').val("");
+        }
+    })
   
     //Output the new message
     socket.on('new message', (data) => {
