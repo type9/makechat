@@ -6,13 +6,19 @@ app.set('view engine', 'handlebars');
 //Establish your public folder
 app.use('/public', express.static('public'));
 
-$(document).ready(()=>{
+$(document).ready(() => {
+
     const socket = io.connect();
+    let currentUser;
+    socket.emit('get online users');
+    //Each user should be in the general channel by default.
+    socket.emit('user changed channel', "General");
   
-    //Keep track of the current user
-    let currentUser;
-    const socket = io.connect();
-    let currentUser;
+    //Users can change the channel by clicking on its name.
+    $(document).on('click', '.channel', (e)=>{
+      let newChannel = e.target.textContent;
+      socket.emit('user changed channel', newChannel);
+    });
 
     // Get the online users from the server
     socket.emit('get online users');
